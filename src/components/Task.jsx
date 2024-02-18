@@ -1,13 +1,13 @@
-function Task({ taskName, isCompleted }) {
+function Task({ taskName, isCompleted, onClick }) {
 	return (
-		<div className="task">
-			<p
-				style={{
-					textDecoration: isCompleted ? "line-through" : "none",
-				}}
-			>
-				{taskName}
-			</p>
+		<div
+			className="task"
+			onClick={onClick}
+			style={{
+				textDecoration: isCompleted ? "line-through" : "none",
+			}}
+		>
+			{taskName}
 		</div>
 	);
 }

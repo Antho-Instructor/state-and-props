@@ -7,12 +7,22 @@ function TaskList() {
 		{ name: "Faire du sport", completed: false },
 	]);
 
+	const toggleTaskCompletion = (index) => {
+		const newTasks = [...tasks];
+		newTasks[index].completed = !newTasks[index].completed;
+		setTasks(newTasks);
+	};
+
 	return (
 		<div>
 			<h2>Liste de tâches</h2>
 			{tasks.map((task, index) => (
 				<div key={index}>
-					<Task taskName={task.name} isCompleted={task.completed} />
+					<Task
+						taskName={task.name}
+						isCompleted={task.completed}
+						onClick={() => toggleTaskCompletion(index)}
+					/>
 				</div>
 			))}
 		</div>
