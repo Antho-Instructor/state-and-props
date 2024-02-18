@@ -17,6 +17,10 @@ npm install
 npm run dev
 ```
 
+## Par où commencer ?
+
+Vous devez cloner le projet sur votre machine. Ensuite, vous pouvez lancer le projet avec la commande `npm run dev`.
+
 ### Exercice : Création d'une liste de tâches
 
 #### Objectif :
@@ -39,13 +43,15 @@ npm run dev
 
 5. Dans `TaskList`, mappez le tableau de tâches du `state` pour rendre dynamiquement un composant `Task` pour chaque tâche dans la liste. Passez les bonnes `props` à chaque `Task` pour afficher le nom de la tâche et son état de complétion.
 
+#### Bonus 🎁 :
+
 6. Ajoutez une fonctionnalité pour marquer une tâche comme terminée lorsque l'utilisateur clique dessus. Vous devrez mettre à jour l'état approprié dans le `state` de `TaskList`.
 
 7. Ajoutez également la possibilité d'ajouter de nouvelles tâches à la liste. Créez un formulaire simple dans `TaskList` pour cela.
 
-8. BONUS : Ajoutez une fonctionnalité pour supprimer une tâche de la liste.
+8. Ajoutez une fonctionnalité pour supprimer une tâche de la liste.
 
-#### Conseils :
+#### Conseils 🧑‍🏫 :
 
 -   Commencez par planifier la structure de vos composants et les données nécessaires.
 -   Utilisez les `props` pour transmettre des données de composant en composant.
