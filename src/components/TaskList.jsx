@@ -13,6 +13,18 @@ function TaskList() {
 		setTasks(newTasks);
 	};
 
+	const addTask = (taskName) => {
+		if (taskName.trim() !== "") {
+			setTasks([...tasks, { name: taskName, completed: false }]);
+		}
+	};
+
+	const deleteTask = (index) => {
+		const newTasks = [...tasks];
+		newTasks.splice(index, 1);
+		setTasks(newTasks);
+	};
+
 	return (
 		<div>
 			<h2>Liste de tâches</h2>
@@ -23,8 +35,24 @@ function TaskList() {
 						isCompleted={task.completed}
 						onClick={() => toggleTaskCompletion(index)}
 					/>
+					<button onClick={() => deleteTask(index)}>Supprimer</button>
 				</div>
 			))}
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+					const taskName = e.target.elements.taskName.value;
+					addTask(taskName);
+					e.target.elements.taskName.value = "";
+				}}
+			>
+				<input
+					type="text"
+					name="taskName"
+					placeholder="Nouvelle tâche"
+				/>
+				<button type="submit">Ajouter</button>
+			</form>
 		</div>
 	);
 }
